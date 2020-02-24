@@ -53,10 +53,16 @@ require "../config/Conexion.php";
         }
 
         // impletamos un metodo para listar los registros
-
         public function listar()
         {
             $sql="SELECT * FROM categoria";
+            return ejecutarConsulta($sql);
+        }
+
+        // impletamos un metodo para listar los registros y mostrar en el Select
+        public function select()
+        {
+            $sql="SELECT * FROM categoria WHERE condicion = 1";
             return ejecutarConsulta($sql);
         }
     }   

@@ -25,9 +25,7 @@
   <link rel="stylesheet" type="text/css" href="../public/datatables/jquery.dataTables.min.css" >
   <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="../public/datatables/responsive.dataTables.min.css" >
-  
-  
-
+  <link rel="stylesheet" type="text/css" href="../public/css/bootstrap-select.min.css" >
 
 </head>
 
@@ -73,9 +71,9 @@
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Custom Components:</h6>
-            <a class="collapse-item" href="buttons.html"><i class="fa fa-circle-o"></i>Artículos</a>
-            <a class="collapse-item" href="cards.html">Categorías</a>
+            <h6 class="collapse-header">Productos y Categorias:</h6>
+            <a class="collapse-item" href="articulo.php"><i class="fa fa-circle-o"></i>Artículos</a>
+            <a class="collapse-item" href="categoria.php">Categorías</a>
           </div>
         </div>
       </li>

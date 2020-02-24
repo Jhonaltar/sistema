@@ -39,15 +39,18 @@
 
         case 'listar';
             $rspta=$categoria->listar();
-            //vamos a declarar un array
-            $data= Array();
+            //vamos a declarar un array 
+            $data= Array(); 
 
             while ($reg=$rspta->fetch_object()){
                 $data[]=array(
-                    "0"=>$reg->idcategoria,
-                    "1"=>$reg->nombre,
+                    "0"=>($reg->condicion) ? '<button class="btn btn-success" onclick="mostrar('.$reg->idcategoria.')">Editar <i class="fa fa-edit"></i></button>'.
+                    ' <button class="btn btn-primary" onclick="desactivar('.$reg->idcategoria.')"> <i class="fa fa-toggle-on"></i></button>' :
+                    '<button class="btn btn-success" onclick="mostrar('.$reg->idcategoria.')">Editar <i class="fa fa-edit"></i></button>'.
+                    ' <button class="btn btn-warning" onclick="activar('.$reg->idcategoria.')"><i class="fa fa-toggle-off"></i></button>' ,
+                    "1"=>'<p class="text-center">'.$reg->nombre.'</p>',
                     "2"=>$reg->descripcion,
-                    "3"=>$reg->condicion
+                    "3"=>($reg->condicion) ?'<span class="badge badge-primary badge-pill" style="margin-left: 70px;">Activado</span>': '<span class="badge badge-warning badge-pill" style="margin-left: 60px;">Desactivado</span>'
                 );
             }
 
@@ -61,5 +64,6 @@
         break;
 
     }
+    
 
 ?>

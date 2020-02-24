@@ -38,8 +38,12 @@
     </div>
   </div>
 
+
+
+
   <!-- Bootstrap core JavaScript-->
   <script src="../public/vendor/jquery/jquery.min.js"></script>
+ 
   <script src="../public/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Core plugin JavaScript-->
@@ -48,12 +52,12 @@
   <!-- Custom scripts for all pages-->
   <script src="../public/js/sb-admin-2.min.js"></script>
 
-  <!-- Page level plugins -->
-  <script src="../public/vendor/chart.js/Chart.min.js"></script>
+  <!-- Page level plugins 
+  <script src="../public/vendor/chart.js/Chart.min.js"></script>-->
 
-  <!-- Page level custom scripts -->
+  <!-- Page level custom scripts 
   <script src="../public/js/demo/chart-area-demo.js"></script>
-  <script src="../public/js/demo/chart-pie-demo.js"></script>
+  <script src="../public/js/demo/chart-pie-demo.js"></script>-->
 
  <!-- Datatable -->
   <script src="../public/datatables/jquery.dataTables.min.js"></script>
@@ -63,9 +67,11 @@
   <script src="../public/datatables/jszip.min.js"></script>
   <script src="../public/datatables/pdfmake.min.js"></script>
   <script src="../public/datatables/vfs_fonts.js"></script>
-
+  <script src="../public/js/bootbox.min.js"></script>
+  <script src="../public/js/bootstrap-select.min.js"></script>
    
-
+ 
+ 
 
 </body>
 
