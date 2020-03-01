@@ -1,6 +1,4 @@
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,11 +20,13 @@
   <link href="../public/css/sb-admin-2.min.css" rel="stylesheet">
 
   <!-- Datatable -->
-  <link rel="stylesheet" type="text/css" href="../public/datatables/jquery.dataTables.min.css" >
-  <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
+  
+  <!-- Datatable <link rel="stylesheet" type="text/css" href="../public/datatables/jquery.dataTables.min.css" >-->
+  <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="../public/datatables/responsive.dataTables.min.css" >
   <link rel="stylesheet" type="text/css" href="../public/css/bootstrap-select.min.css" >
 
+  
 </head>
 
 <body id="page-top">
@@ -60,7 +60,7 @@
 
       <!-- Heading -->
       <div class="sidebar-heading">
-        Interface
+        Interfas
       </div>
 
       <!-- Nav Item - Pages Collapse Menu -->
@@ -81,16 +81,40 @@
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-          <i class="fas fa-fw fa-wrench"></i>
-          <span>Utilities</span>
+          <i class="fas fa-th"></i>
+          <span>Compras</span>
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Custom Utilities:</h6>
-            <a class="collapse-item" href="utilities-color.html">Colors</a>
-            <a class="collapse-item" href="utilities-border.html">Borders</a>
-            <a class="collapse-item" href="utilities-animation.html">Animations</a>
-            <a class="collapse-item" href="utilities-other.html">Other</a>
+            <h6 class="collapse-header">Compras de Articulos:</h6>
+            <a class="collapse-item" href="#">Ingresos</a>
+            <a class="collapse-item" href="proveedor.php">Proveedor</a>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities1" aria-expanded="true" aria-controls="collapseUtilities1">
+          <i class="fas fa-shopping-cart"></i>
+          <span>Ventas</span>
+        </a>
+        <div id="collapseUtilities1" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Ventas de Articulos:</h6>
+            <a class="collapse-item" href="#">Ventas</a>
+            <a class="collapse-item" href="#">Clientes</a>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities2" aria-expanded="true" aria-controls="collapseUtilities2">
+          <i class="fa fa-universal-access"></i>
+          <span>Accesso al Sistema</span>
+        </a>
+        <div id="collapseUtilities2" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Permisos a Usuarios:</h6>
+            <a class="collapse-item" href="usuario.php">Usuario</a>
+            <a class="collapse-item" href="permiso.php">Permisos</a>
           </div>
         </div>
       </li>
@@ -100,42 +124,42 @@
 
       <!-- Heading -->
       <div class="sidebar-heading">
-        Addons
+        Consultas y Reportes
       </div>
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-          <i class="fas fa-fw fa-folder"></i>
-          <span>Pages</span>
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>Cosultas</span>
         </a>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Login Screens:</h6>
-            <a class="collapse-item" href="login.html">Login</a>
-            <a class="collapse-item" href="register.html">Register</a>
-            <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
+            <h6 class="collapse-header">Consultas Compras:</h6>
+            <a class="collapse-item" href="#">Consultas Compras</a>
+            <h6 class="collapse-header">Consultas Ventas:</h6>
+            <a class="collapse-item" href="#">Consultas Ventas</a>
             <div class="collapse-divider"></div>
-            <h6 class="collapse-header">Other Pages:</h6>
-            <a class="collapse-item" href="404.html">404 Page</a>
-            <a class="collapse-item" href="blank.html">Blank Page</a>
+            <h6 class="collapse-header">Ayuda:</h6>
+            <a class="collapse-item" href="#">DPF</a>
+            <a class="collapse-item" href="#">IT..</a>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities3" aria-expanded="true" aria-controls="collapseUtilities3">
+        <i class="far fa-question-circle"></i>
+          <span>Ayuda</span>
+        </a>
+        <div id="collapseUtilities3" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Soporte Tecnico:</h6>
+            <a class="collapse-item" href="#">DPF</a>
+            <a class="collapse-item" href="#">IT..</a>
           </div>
         </div>
       </li>
 
-      <!-- Nav Item - Charts -->
-      <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Charts</span></a>
-      </li>
-
-      <!-- Nav Item - Tables -->
-      <li class="nav-item">
-        <a class="nav-link" href="tables.html">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Tables</span></a>
-      </li>
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">

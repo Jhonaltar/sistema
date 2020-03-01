@@ -1,48 +1,41 @@
 var tabla;
 
 //funcion que se ejecuta al inicio
-function init(){
+function init() {
     mostrarform(false);
     listar();
 
-    $("#formulario").on("submit", function (e) 
-    {
-      guardaryeditar(e);  
+    $("#formulario").on("submit", function (e) {
+        guardaryeditar(e);
     })
-
-    //Cargamos los items al select categoria
-    $.post("../ajax/articulo.php?op=selectCategoria", function (r) {
-        $("#idcategoria").html(r);
-        $("#idcategoria").selectpicker('refresh');
-    });
-    $("#imagenmuestra").hide();
 }
 
 //funcion limpiar
 function limpiar() {
-    $("#codigo").val("");
+
+    $("#idpersona").val("");
     $("#nombre").val("");
-    $("#descripcion").val("");
-    $("#stock").val("");
-    $("#imagen").val("");
-    $("#imagenmuestra").attr("src", "");
-    $("#imagenactual").val();
-    $("#print").hide();
-    $("#idarticulo").val("");
+    $("#num_documento").val("");
+    $("#direccion").val("");
+    $("#telefono").val("");
+    $("#email").val("");
+
 }
 
 //funcion mostrar formulario
+
 function mostrarform(flag) {
     limpiar();
-    if(flag){
+    if (flag) {
         $("#listadoregistros").hide();
         $("#formularioregistros").show();
         $("#btnGuardar").prop("disabled", false);
-        $("#btnagregar").hide();
-    }else{
+        $("#btnagregarc").hide();
+    }
+    else {
         $("#listadoregistros").show();
         $("#formularioregistros").hide();
-        $("#btnagregar").show();
+        $("#btnagregarc").show();
     }
 }
 
@@ -58,7 +51,7 @@ function listar() {
         "aProcessing": true, //Activamos el procesamiento del datatables
         "sServerSide": true, //paginaciion y filtrado realizados por el servidor
         dom: 'Bfrtip', //definimos los elementos del control de tablas
-        
+
 
         buttons: [{
             //Botón para Excel
@@ -66,27 +59,27 @@ function listar() {
             footer: true,
             title: 'Archivo',
             filename: 'Export_File',
-    
+
             //Aquí es donde generas el botón personalizado
             text: '<button class="btn btn-success ">Exportar a Excel <i class="fas fa-file-excel"></i></button>'
-          },
-          //Botón para PDF
-          {
+        },
+        //Botón para PDF
+        {
             extend: 'pdf',
             footer: true,
             title: 'Archivo PDF',
             filename: 'Export_File_pdf',
             text: '<button class="btn btn-danger">Exportar a PDF <i class="far fa-file-pdf"></i></button>'
-          }
+        }
         ],
-        
 
-        "ajax": 
+
+        "ajax":
         {
-            url: '../ajax/articulo.php?op=listar',
+            url: '../ajax/persona.php?op=listarp',
             type: "get",
             dataType: "json",
-            error: function(e){
+            error: function (e) {
                 console.log(e.responseText);
             }
         },
@@ -114,19 +107,19 @@ function listar() {
     },
         "bDestroy": true,
         "iDisplayLength": 5, //paginacion
-        "order":[[0, "desc"]] //ordenar (columna,orden)
+        "order": [[0, "desc"]] //ordenar (columna,orden)
 
 
     }).DataTable();
 }
 
 function guardaryeditar(e) {
-    e.preventDefault();//no se activara la accion predeterminada del evento
-    $("#btnGuardar").prop("disabled",true);
+    e.preventDefault(); //no se activara la accion predeterminada del evento
+    $("#btnGuardar").prop("disabled", true);
     var formData = new FormData($("#formulario")[0]);
 
     $.ajax({
-        url: "../ajax/articulo.php?op=guardaryeditar",
+        url: "../ajax/persona.php?op=guardaryeditar",
         type: "POST",
         data: formData,
         contentType: false,
@@ -137,73 +130,42 @@ function guardaryeditar(e) {
             mostrarform(false);
             tabla.ajax.reload();
         }
-    })
+
+
+    });
     limpiar();
 }
 
-function mostrar(idarticulo) 
-{
-    $.post("../ajax/articulo.php?op=mostrar",{idarticulo: idarticulo} , function (data,status) 
-    {
-        data= JSON.parse(data);
+function mostrar(idpersona) {
+    $.post("../ajax/persona.php?op=mostrar", { idpersona: idpersona }, function (data, status) {
+        data = JSON.parse(data);
         mostrarform(true);
-        
-        $("#idcategoria").val(data.idcategoria);
-        $('#idcategoria').selectpicker('refresh');
-        $("#codigo").val(data.codigo);
+
+        $("#idpersona").val(data.idpersona);
         $("#nombre").val(data.nombre);
-        $("#stock").val(data.stock);
-        $("#descripcion").val(data.descripcion);
-        $("#imagenmuestra").show();
-        $("#imagenmuestra").attr("src","../files/articulos/"+data.imagen);
-        $("#imagenactual").val(data.imagen);
-        $("#idarticulo").val(data.idarticulo);
-        generarbarcode();
-    });    
+        $("#tipo_documento").val(data.tipo_documento);
+        $("#tipo_documento").selectpicker('refresh');
+        $("#num_documento").val(data.num_documento);
+        $("#direccion").val(data.direccion);
+        $("#telefono").val(data.telefono);
+        $("#email").val(data.email);
+    })
 }
 
-// funcion para desactivar registro de Articulo 
-function desactivar(idarticulo) 
+// funcion para Eliminar registro de Persona
+
+function eliminar(idpersona) 
 {
-    bootbox.confirm("¿Estas Seguro de Desactivar el Articulo?", function (result) 
+    bootbox.confirm("¿Estas seguro que eliminar la Proveedor?",function (result) 
     {
         if(result)
         {
-            $.post("../ajax/articulo.php?op=desactivar",{idarticulo,idarticulo}, function (e) {
+            $.post("../ajax/persona.php?op=eliminar",{idpersona : idpersona}, function (e) {
                 bootbox.alert(e);
                 tabla.ajax.reload();
             })
-        }   
+        }    
     });
-}
-
-// funcion para activar registro de Articulo 
-function activar(idarticulo) 
-{
-    bootbox.confirm("¿Estas Seguro de Activar el Articulo?", function (result) 
-    {
-        if(result)
-        {
-            $.post("../ajax/articulo.php?op=activar",{idarticulo,idarticulo}, function (e) {
-                bootbox.alert(e);
-                tabla.ajax.reload();
-            })
-        }   
-    });
-}
-
-//funcion para generar el codigo de barras
-function generarbarcode() 
-{
-    codigo=$("#codigo").val();
-    JsBarcode("#barcode", codigo);
-    $("#print").show();
-}
-
-//funcion para imprimir codigo de barra
-function imprimir() 
-{
-    $("#print").printArea();
 }
 
 init();
