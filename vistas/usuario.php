@@ -1,6 +1,4 @@
 <?php
-
-
 //activamos el alamacenamiento en el buffer
 ob_start();
 session_start();
@@ -10,7 +8,7 @@ if (!isset($_SESSION["nombre"])) {
 } else {
 require 'header.php';
 
-if ($_SESSION['acceso'] == 1 ) 
+if ($_SESSION['acceso']==1) 
 {
 ?>
 <!-- Content Wrapper -->
@@ -42,7 +40,7 @@ if ($_SESSION['acceso'] == 1 )
             <div class="col-lg-12">
               <div class="box">
                 <div class="box-header with-border">
-                  <h1 class="box-title">Usuario <button class="btn btn-success" id="btnagregar" onclick="mostrarform(true)"><i class="fa fa-plus-circle"></i> Agregar</button></h1>
+                  <h1 class="box-title">Usuario <button class="btn btn-success" id="btnagregar" onclick="mostrarform(true)"><i class="fa fa-plus-circle"></i> Agregar</button> <a href="../reportes/rptusuarios.php" target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generar Reporte</a></h1>
                   <div class="box-tools pull-right">
                   </div>
                 </div>

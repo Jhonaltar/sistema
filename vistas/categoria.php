@@ -43,7 +43,7 @@ if (!isset($_SESSION["nombre"])) {
               <div class="col-lg-12">
                 <div class="box">
                   <div class="box-header with-border">
-                    <h1 class="box-title">Categoria <button class="btn btn-success" id="btnagregarc" onclick="mostrarform(true)"><i class="fa fa-plus-circle"></i> Agregar</button></h1>
+                    <h1 class="box-title">Categoria <button class="btn btn-success" id="btnagregarc" onclick="mostrarform(true)"><i class="fa fa-plus-circle"></i> Agregar</button> <a href="../reportes/rptcategorias.php" target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generar Reporte</a></h1>
                     <div class="box-tools pull-right">
                     </div>
                   </div>

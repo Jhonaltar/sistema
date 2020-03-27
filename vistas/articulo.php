@@ -44,7 +44,12 @@ if (!isset($_SESSION["nombre"])) {
               <div class="col-lg-12">
                 <div class="box">
                   <div class="box-header with-border">
-                    <h1 class="box-title">Articulo <button class="btn btn-success" id="btnagregar" onclick="mostrarform(true)"><i class="fa fa-plus-circle"></i> Agregar</button></h1>
+                    <h1 class="box-title">Articulo <button class="btn btn-success" id="btnagregar" onclick="mostrarform(true)"><i class="fa fa-plus-circle"></i> Agregar</button> <a href="../reportes/rptarticulos.php" target="_blank" class="btn btn-primary btn-icon-split">
+                    <span class="icon text-white-50">
+                      <i class="fas fa-print"></i>
+                    </span>
+                    <span class="text">Generar Reporte</span>
+                  </a></h1>
                     <div class="box-tools pull-right">
                     </div>
                   </div>

@@ -166,6 +166,8 @@ session_start();
                 }
                 echo json_encode($fetch);
             break;
+
+           
          
             case 'salir':
                 //Limpiamos las variables de sesión   
@@ -176,6 +178,8 @@ session_start();
                 header("Location: ../index.php");
          
             break;
+
+           
 
     }
 

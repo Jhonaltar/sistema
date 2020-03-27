@@ -3869,6 +3869,7 @@ input[type="button"].btn-block {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
+  
 }
 
 .nav-link {
@@ -3959,6 +3960,7 @@ input[type="button"].btn-block {
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem 1rem;
+  
 }
 
 .navbar > .container,
@@ -3989,6 +3991,9 @@ input[type="button"].btn-block {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
+  position: fixed;
+  z-index: 1;
+  overflow-x: hidden;
 }
 
 .navbar-nav .nav-link {
@@ -10230,9 +10235,10 @@ a:focus {
   font-size: 0.65rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 468px) {
   .sidebar {
     width: 14rem !important;
+    
   }
   .sidebar .nav-item .collapse {
     position: relative;
@@ -10278,6 +10284,7 @@ a:focus {
     font-weight: 900;
     content: '\f107';
     font-family: 'Font Awesome 5 Free';
+    
   }
   .sidebar .nav-item .nav-link[data-toggle="collapse"].collapsed::after {
     content: '\f105';
@@ -10294,6 +10301,7 @@ a:focus {
   .sidebar.toggled {
     overflow: visible;
     width: 6.5rem !important;
+    
   }
   .sidebar.toggled .nav-item .collapse {
     position: absolute;
@@ -11036,5 +11044,28 @@ body.sidebar-toggled footer.sticky-footer {
   }
 }
 
+
+
+
+
+
+#shiva
+{
+  width: 100px;
+	height: 100px;
+	background: red;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+  float:left;
+  margin:5px;
+}
+.count
+{
+  line-height: 100px;
+  color:white;
+  margin-left:30px;
+  font-size:25px;
+}
 
 

@@ -2,7 +2,7 @@
  <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2019</span>
+            <span>Copyright &copy; Jhon Altamirano Retto 2020</span>
           </div>
         </div>
       </footer>
@@ -35,6 +35,7 @@
 
   <!-- Custom scripts for all pages-->
   <script src="../public/js/sb-admin-2.min.js"></script>
+   
 
 <!-- Page level plugins -->
 
@@ -52,6 +53,9 @@
   <script src="../public/datatables/vfs_fonts.js"></script>
   <script src="../public/js/bootbox.min.js"></script>
   <script src="../public/js/bootstrap-select.min.js"></script>
+
+  
+   
 </body>
 
 </html>
